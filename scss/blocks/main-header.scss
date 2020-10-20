@@ -1,0 +1,56 @@
+.main-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 92px;
+
+  @include laptop() {
+    margin-bottom: 50px;
+  }
+  
+  @include phone() {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  &__logo {
+    max-width: 80px;
+    width: 100%;
+    flex: 1 1 auto;
+
+    @include phone() {
+      max-width: 90px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  &__works-hours {
+    color: #fff;
+
+    @include phone() {
+      margin-left: auto;
+    }
+  }
+
+  &__phone {
+    display: block;
+    color: #fff;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: $color-violet;
+    }
+
+    @include phone() {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin-left: auto;
+    }
+  }
+}

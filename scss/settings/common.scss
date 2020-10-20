@@ -1,0 +1,151 @@
+.page {
+  min-width: 320px;
+  min-height: 100%;
+
+  &__wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden
+  }
+
+  &__content {
+    flex-grow: 1;
+  }
+
+  &__footer {
+    flex-shrink: 0;
+  }
+}
+
+html * {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
+  font-family: $font-family-main;
+  font-size: $font-size-main;
+  font-weight: $font-weight-main;
+  line-height: $line-height-main;
+  color: $color-main;
+
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  background-color: #080811;
+}
+
+[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+
+ul, ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @include desktop() {
+    max-width: 960px;
+    padding: 0 10px;
+  }
+
+  @include laptop() {
+    max-width: 640px;
+  }
+
+  @include phone() {
+    max-width: 320px;
+  }
+}
+
+.dedicated {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: bold;
+  color: $color-violet;
+}
+
+.section-title {
+  font-weight: 800;
+  font-size: 25px;
+  line-height: 1.5;
+  color: #fff;
+
+  margin-bottom: 26px;
+
+  @include laptop() {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  @include phone() {
+    font-size: 15px;
+  }
+}
+
+.section-subtitle {
+  margin-bottom: 0;
+}
+
+.icon-ellipse {
+  width: 100px;
+  height: 100px;
+  background-image: url("../img/svg/icon-ellipse.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  @include desktop() {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.icon-cross {
+  width: 100px;
+  height: 100px;
+  background-image: url("../img/svg/icon-cross.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  @include desktop() {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.datepicker {
+  z-index: 11000 !important;
+}

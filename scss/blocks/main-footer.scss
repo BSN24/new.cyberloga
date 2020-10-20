@@ -1,0 +1,40 @@
+.main-footer {
+  position: relative;
+  height: 831px;
+  z-index: 1;
+  padding-top: 8px;
+
+  @include laptop() {
+    height: 680px;
+  }
+
+  @include phone() {
+    height: 600px;
+  }
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+
+    width: 100%;
+    height: 1351px;
+
+    background-image: url("../img/bg-footer.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+
+    @include laptop() {
+      height: 1000px;
+    }
+
+    @include laptop() {
+      height: 780px;
+    }
+  }
+}

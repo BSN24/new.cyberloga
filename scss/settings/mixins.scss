@@ -1,0 +1,45 @@
+// --------------------------------------------------
+// Media queries
+// --------------------------------------------------
+
+@mixin desktop() {
+  @media screen and (max-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin laptop() {
+  @media screen and (max-width: $laptop) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media screen and (max-width: $tablets) {
+    @content;
+  }
+}
+
+@mixin phone() {
+  @media screen and (max-width: $phone) {
+    @content;
+  }
+}
+
+
+// --------------------------------------------------
+// Clearfix
+// --------------------------------------------------
+
+// eg: @include clearfix;
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}

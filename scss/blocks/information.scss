@@ -1,0 +1,166 @@
+.information {
+  position: relative;
+  padding-top: 58px;
+  padding-bottom: 122px;
+
+  @include laptop() {
+    padding-top: 30px;
+    padding-bottom: 80px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-bottom: 103px;
+    padding-right: 23px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+      padding-right: 0;
+      padding-left: 23px;
+    }
+
+    @include laptop() {
+      flex-direction: column !important;
+      padding-right: 0;
+
+      max-width: 440px;
+      width: 100%;
+      margin: 0 auto 50px;
+
+      &:nth-child(even) {
+        padding-left: 0;
+      }
+    }
+
+    @include phone() {
+      max-width: 100%;
+    }
+  }
+
+  &__content {
+    max-width: 450px;
+    flex: 1 1 auto;
+    
+    @include laptop() {
+      //order: 2;
+
+      max-width: 100%;
+    }
+  }
+
+  &__img {
+    max-width: 520px;
+    width: 100%;
+    flex: 1 1 auto;
+    
+    @include laptop() {
+      //order: 1;
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 24px;
+
+    @include laptop() {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    @include phone() {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 25px;
+
+    @include laptop() {
+      margin-bottom: 35px;
+    }
+
+    @include phone() {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 600;
+    font-size: 20px;
+    color: $color-violet;
+
+    margin-bottom: 49px;
+
+    @include laptop() {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    @include phone() {
+      font-size: 15px;
+
+      margin-bottom: 25px;
+    }
+  }
+
+  &__list {
+    @include laptop() {
+      max-width: 390px;
+      margin: 0 auto 35px;
+    }
+  }
+
+  &__list-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include phone() {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  &__list-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 50px;
+    width: 100%;
+    height: 50px;
+    flex: 1 1 auto;
+    margin-right: 25px;
+
+    border-radius: 50%;
+    background-color: #7353F0;
+    box-shadow: 0 0 10px 5px rgba(115, 83, 240, 0.3);
+
+    .icon {
+      width: 25px;
+      height: 25px;
+      fill: #fff;
+    }
+
+    @include phone() {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__list-text {
+    margin-bottom: 0;
+  }
+
+}

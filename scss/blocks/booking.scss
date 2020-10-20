@@ -1,0 +1,66 @@
+.booking {
+  padding-top: 140px;
+  padding-bottom: 54px;
+
+  @include laptop() {
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+
+  @include phone() {
+    padding-top: 0;
+  }
+
+  &__bg {
+    padding-top: 70px;
+    padding-bottom: 70px;
+
+    position: relative;
+    z-index: 1;
+
+    background-image: url("../img/bg-booking.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+
+    @include phone() {
+      padding: 70px 15px 30px;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    pointer-events: none;
+
+    @include phone() {
+      width: 265px;
+      height: 265px;
+    }
+  }
+
+  &__title {
+    max-width: 650px;
+    width: 100%;
+    margin: 0 auto 36px;
+    text-align: center;
+
+    @include phone() {
+      max-width: 100%;
+      margin-bottom: 20px;
+
+      font-size: 14px;
+    }
+  }
+
+  &__btn {
+    margin: 0 auto;
+  }
+
+
+
+}
