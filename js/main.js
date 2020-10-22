@@ -9,6 +9,7 @@ $(document).ready(function () {
             overlayColor: "rgba(255, 255, 255, 0.4)",
             width: false,
             closeOnEscape: true,
+            overlayClose: false,
             closeButton: true,
             zindex: 10000,
             focusInput: false
@@ -61,10 +62,9 @@ $(document).ready(function () {
             maxDate: new Date(month),
             toggleSelected: false,
             startDate: new Date(),
-            timepicker: true
+            timepicker: true,
+            position: 'top left'
         });
-
-        //myDatepicker.selectDate(new Date());
 
     })();
 
