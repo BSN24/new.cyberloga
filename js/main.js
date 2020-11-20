@@ -24,7 +24,7 @@ $(document).ready(function () {
         $('.order-sms-btn').click(function (e) {
             var inputSms = $('.input-sms').val().trim();
             var error = $('.error');
-            
+
             if (inputSms === '1234') {
                 console.log('send');
                 error.text('').hide();
@@ -68,37 +68,53 @@ $(document).ready(function () {
 
     })();
 
-    $('#order-form').validate({
-        errorElement: "span",
-        errorPlacement: function (e, t) {
-            e.appendTo(t.parents("div:first"));
-        },
-        ignore: ":hidden",
-        rules: {
-            name: {required: !0, minlength: 2, maxlength: 30},
-            phone: {required: !0, minlength: 17, maxlength: 18},
-            club: {required: !0},
-            age: {required: !0},
-            date: {required: !0},
-            sms_check: {required: !0}
-        },
-        messages: {
-            name: {
-                required: "Пожалуйста введите имя",
-                minlength: "Ваше Имя слишком короткое",
-                maxlength: "Ваше Имя слишком длинное"
+    $('form').each(function () {
+        $(this).validate({
+            errorElement: "span",
+            errorPlacement: function (e, t) {
+                e.appendTo(t.parents("div:first"));
             },
-            phone: {
-                required: "Пожалуйста введите телефон",
-                minlength: "Телефон введен неполностью"
+            ignore: ":hidden",
+            rules: {
+                name: {required: !0, minlength: 2, maxlength: 30},
+                phone: {required: !0, minlength: 17, maxlength: 18},
+                club: {required: !0},
+                age: {required: !0},
+                date: {required: !0},
+                sms_check: {required: !0},
+                price_min: {required: !0, number: true},
             },
-            club: {required: "Пожалуйста выберите клуб"},
-            date: {required: "Пожалуйста выберите дату и время"},
-            sms_check: {required: "Введите код из СМС сообщения"}
-        },
-        submitHandler: function (e) {
-            sendForm();
-        }
+            messages: {
+                name: {
+                    required: "Пожалуйста введите имя",
+                    minlength: "Ваше Имя слишком короткое",
+                    maxlength: "Ваше Имя слишком длинное"
+                },
+                phone: {
+                    required: "Пожалуйста введите номер телефона",
+                    minlength: "Ошибка, проверьте правильность ввода номера"
+                },
+                club: {required: "Пожалуйста выберите клуб"},
+                date: {required: "Пожалуйста выберите дату и время"},
+                sms_check: {required: "Введите код из СМС сообщения"},
+                price_min: {
+                    required: "Введите сумму пополнения",
+                    min: `Сумма не соответствует условиям акции, минимальная сумма ${$('input[name=price_min]').attr('min')} руб.`
+                },
+            },
+            submitHandler: function (e) {
+                sendForm();
+            }
+        })
+    });
+
+    $('.sale-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+        fade: true,
+        cssEase: 'linear'
     });
 
 });
