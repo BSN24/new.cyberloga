@@ -83,6 +83,7 @@ $(document).ready(function () {
                 date: {required: !0},
                 sms_check: {required: !0},
                 price_min: {required: !0, number: true},
+                check_policy: {required: true}
             },
             messages: {
                 name: {
@@ -101,6 +102,7 @@ $(document).ready(function () {
                     required: "Введите сумму пополнения",
                     min: `Сумма не соответствует условиям акции, минимальная сумма ${$('input[name=price_min]').attr('min')} руб.`
                 },
+                check_policy: {required: "Подтвердите согласие с политикой конфиденциальности"}
             },
             submitHandler: function (e) {
                 sendForm();
