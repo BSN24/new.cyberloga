@@ -113,17 +113,12 @@ $(document).ready(function () {
     $('.sale-slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: false,
+        arrows: true,
         dots: true,
         fade: true,
-        cssEase: 'linear'
-    });
-
-    $('.image-slider').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-        dots: false,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        cssEase: 'linear',
         prevArrow: '<button class="slick-prev" aria-label="Назад"><svg><use xlink:href="img/svg-sprite/symbol/sprite.svg#left-arrow"></use></svg></button>',
         nextArrow: '<button class="slick-next" aria-label="Вперед"><svg><use xlink:href="img/svg-sprite/symbol/sprite.svg#right-arrow"></use></svg></button>',
     });
